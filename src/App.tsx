@@ -128,13 +128,11 @@ export default function App() {
   }, [screen]);
 
   useEffect(() => {
-    if (!gameMode || (gameMode !== 'multiplayer' && gameMode !== 'multiplayer_server')) return;
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000';
-    const socketUrl = import.meta.env.VITE_SOCKET_URL || origin;
-    const client = io(socketUrl, {
-      transports: ['websocket'],
-      withCredentials: true,
-    });
+    if (!gameMode || gameMode !== 'multiplayer') return;
+    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+    const protocol = typeof window !== 'undefined' ? window.location.protocol : 'http:';
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || `${protocol}//${hostname}:3003`;
+    const client = io(socketUrl, { transports: ['websocket'] });
     setSocket(client);
 
     client.on('connect', () => setMultiplayerConnected(true));
@@ -693,8 +691,6 @@ export default function App() {
               setScreen('battle');
             } else if (gameMode === 'multiplayer') {
               setScreen('multiplayer_lobby');
-            } else if (gameMode === 'multiplayer_server') {
-              setScreen('multiplayer_room');
             } else {
               setScreen('track_select');
             }

@@ -213,26 +213,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
               </p>
             </button>
 
-            {/* Mode 5: Real Server Match */}
-            <button
-              onClick={() => handleModeClick('multiplayer_server')}
-              className="group p-5 bg-[#161616] border border-white/10 hover:border-[#cc3333] hover:shadow-[6px_6px_0px_0px_#cc3333] flex flex-col justify-between text-left transition-all relative overflow-hidden"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[10px] font-mono text-[#cc3333] font-bold uppercase tracking-widest">
-                  SERVER LOBBY
-                </span>
-                <Flame className="w-5 h-5 text-[#cc3333] group-hover:scale-110 transition-transform" />
-              </div>
-              <h3 className="text-xl font-black italic text-white uppercase font-arcade group-hover:text-[#cc3333]">
-                SERVER MULTIPLAYER
-              </h3>
-              <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-                Create or join a room on the network server and race against another rider.
-              </p>
-            </button>
-
-            {/* Mode 6: Last Chance Garage */}
+            {/* Mode 5: Last Chance Garage */}
             <button
               onClick={() => {
                 soundEngine.playCash();
