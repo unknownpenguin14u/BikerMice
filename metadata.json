@@ -1,0 +1,6 @@
+{
+  "name": "Biker Mice from Mars: Remake",
+  "description": "High-octane isometric combat racing game remake inspired by the classic 90s SNES Biker Mice from Mars with Throttle, Modo, Vinnie, Charley's Garage, campaign cups, and battle arenas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
